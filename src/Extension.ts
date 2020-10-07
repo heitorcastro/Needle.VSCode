@@ -23,6 +23,8 @@ export function activate(context: vscode.ExtensionContext)
 		vscode.workspace.openTextDocument('c:/Users/heitor/Desktop/test.txt').then((document) => {
             let text = document.getText();
 		  });
+
+		  var templateManager = new TemplateManager("a","b");
 		  
 	});
 
