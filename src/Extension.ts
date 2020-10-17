@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext)
 		// The code you place here will be executed every time your command is executed
 
 		// Explorer context path
-		let path = e.fsPath;
+		let selectedPath = e.fsPath;
 
 		// Display a message box to the user
 		//vscode.window.showInformationMessage('Hello World from Needle!');
@@ -34,6 +34,12 @@ export function activate(context: vscode.ExtensionContext)
 				vscode.window.showInputBox().then(filename =>
 					{
 						var a = 1;
+
+						var content = fs.readFileSync(fileTemplateFolder + "/" + selection);
+
+						var targetPath = selectedPath + "/" + filename;
+
+						fs.writeFileSync(targetPath, content);
 					});
 		 	}
 		 );
