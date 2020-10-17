@@ -10,14 +10,23 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:needle.helloWorld"
+		"onCommand:needle.inject"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
+		"menus":{
+			"explorer/context": [
+				{
+					"when": "explorerViewletFocus",
+					"command": "needle.inject",
+					"group": "navigation"
+				}
+			]
+		},
 		"commands": [
 			{
 				"command": "needle.inject",
-				"title": "Needle: Inject component"
+				"title": "Needle Inject component"
 			}
 		]
 	},
